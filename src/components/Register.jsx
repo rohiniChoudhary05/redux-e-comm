@@ -23,7 +23,7 @@ const Register = () => {
       setRegisterData(arr)
      localStorage.setItem("reg user", JSON.stringify(arr))
      reset()
-    // setToogle(true )
+     dispatch(setToogle(true))
   };
 
   return (

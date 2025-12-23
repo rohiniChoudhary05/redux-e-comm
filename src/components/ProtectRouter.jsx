@@ -3,9 +3,10 @@ import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router'
 
 const ProtectRouter = ({ children}) => {
-  const {User} = useSelector((state)=>(state.Auth))
-  if(!User){
-    return <Navigate to= "/" />
+  const {user} = useSelector((state)=>(state.Auth))
+    console.log("PUBLIC ROUTER USER =>", user);
+  if(!user){
+    return <Navigate to= "/"  replace />
   }
 
   return children ;

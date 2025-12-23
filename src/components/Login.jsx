@@ -8,7 +8,10 @@ import { setUser } from "../feature/AuthSlice";
 const Login = () => {
   const dispatch = useDispatch();
   //  let  navigate =useNavigate()
-    let LSD = JSON.parse(localStorage.getItem("reg user")) || [];
+ let LSD = JSON.parse(localStorage.getItem("reg user")) || [];
+
+    console.log(LSD);
+    
 
   const {
     register,
@@ -18,7 +21,6 @@ const Login = () => {
   } = useForm();
 
 const formSubmit = (data) => {
-  console.log(data);
   reset();
 
   let user = LSD.find(
@@ -29,7 +31,6 @@ const formSubmit = (data) => {
     localStorage.setItem("log user", JSON.stringify(user));
     dispatch(setUser(user));
     alert("Login Successful");
-      //  navigate("/home"); 
   } else {
     alert("Invalid email or password");
   }

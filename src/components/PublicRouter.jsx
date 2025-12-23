@@ -3,13 +3,14 @@ import { useSelector } from "react-redux";
 import { Navigate } from "react-router";
 
 const PublicRouter = ({ children }) => {
-  let { User } = useSelector((state) => state.Auth);
+  const { user } = useSelector((state) => state.Auth);
 
-  if (User) {
+  console.log("PUBLIC ROUTER USER =>", user);
+
+  if (user) {
     return <Navigate to="/home" />;
   }
 
   return children;
 };
-
 export default PublicRouter;

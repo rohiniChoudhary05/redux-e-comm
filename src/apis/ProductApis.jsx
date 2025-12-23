@@ -1,7 +1,7 @@
 import { axiosInstance } from "../config/axiosInstance";
 export const fatchProduct = async () => {
   try {
-    let res = await axiosInstance("/products");
+    let res = await axiosInstance.get("/products ");
     if (res) {
       return res.data
     }

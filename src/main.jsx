@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { Provider } from 'react-redux'
 import { store } from './store/Store.jsx'
 import { BrowserRouter } from "react-router";
+ import { ToastContainer } from 'react-toastify';
 import {
   QueryClient,
   QueryClientProvider,
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
  <QueryClientProvider client={queryClient}>
      <BrowserRouter>
      <App />
+     <ToastContainer/>
      </BrowserRouter>
  </QueryClientProvider>
  </Provider>
